@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <title>Les petits plats</title>
+</head>
+
+<body>
+    <header class="header">
+        <img src="ASSETS/logo-entreprise.svg" alt="">
+        <nav class="header__nav">
+            <input class="header__input" type="search" placeholder="Rechercher une recette" />
+            <img src="ASSETS/logo-search.svg" alt="">
+        </nav>
+    </header>
+    <main>
+        <div class="selection">
+            <div class="selection__choice">
+                <p></p>
+                <img src="ASSETS/logo-close.svg" alt="" />
+            </div>
+            <div class="selection__options">
+                <button class="selection__button selection__button--blue">Ingredients <img src="ASSETS/logo-arrowDown.svg"></button>
+                <button class="selection__button selection__button--green">Appareils <img src="ASSETS/logo-arrowDown.svg"></button>
+                <button class="selection__button selection__button--orange">Ustensils <img src="ASSETS/logo-arrowDown.svg"></button>
+            </div>
+        </div>
+        <div class ="recipes"></div>
+    </main>
+
+     <script src="SCRIPTS/index.js" type="module"></script>
+   
+</body>
+
+</html>
