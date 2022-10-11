@@ -1,4 +1,4 @@
-import { ingredientInnerHtml } from "../Functions/ingredient.js";
+import { ingredientInnerHtml } from "/SCRIPTS/Functions/ingredient.js";
 
 
 // Fonction d'usine qui retourne l'affichage de la recette

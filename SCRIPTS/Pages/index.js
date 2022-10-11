@@ -1,6 +1,6 @@
 import { recipes } from '/DATA/recettes.js';
 import { textIngredient } from '/SCRIPTS/Functions/ingredient.js';
-import { recipeFactory } from '../Functions/recipeFactory.js';
+import { recipeFactory } from '/SCRIPTS/Functions/recipeFactory.js';
 
 
 // Affichage de toutes les recettes
