@@ -150,3 +150,49 @@
 .recipes-article--bold {
     font-weight: bold;
 }
+
+
+
+/* ********** Mise en page pour les écrans de 1024px au maximum ********** */
+
+@media screen and (max-width: 1920px) {
+    .selection {
+        height: 20vh;
+    }
+
+    .selection__choice {
+        width : 18vw;
+        height: 5vh;
+    }
+
+    .selection__options {
+        width: 80vw;
+        justify-content: space-between;
+        height: 8vh;
+    }
+
+    .selection__button {
+        width: 20vw;
+    }
+
+    .recipes-article {
+       height: 55vh;
+       width: 40vw;
+    }
+
+    .recipes-article__block1 {
+        height: 25vh;
+    }
+
+    .recipes-article__block2 {
+        height: 25vh;
+    }
+
+    .recipes-article__block2__informations__ingredients {
+        width: 15vw;
+    }
+
+    .recipes-article__block2__informations__description {
+        width: 15vw;
+    }
+}
