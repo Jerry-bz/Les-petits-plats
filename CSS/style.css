@@ -1,5 +1,5 @@
 * {
-    font-family:'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 1.03em;
 }
 
@@ -17,7 +17,7 @@
     align-items: center;
     width: 90%;
     height: 5vh;
-    border-radius: 5px; 
+    border-radius: 5px;
     background: #E7E7E7;
     padding: 0% 1%;
     margin-top: 1%;
@@ -37,7 +37,7 @@
 }
 
 .header__input:focus {
-   outline: none;
+    outline: none;
 }
 
 .selection {
@@ -64,8 +64,8 @@
 
 .selection__options {
     display: flex;
-    justify-content: space-between;
-    width: 45vw;
+    position: relative;
+    height: 8vh;
 }
 
 .selection__button {
@@ -80,16 +80,18 @@
     font-weight: bold;
 }
 
-.selection__button--blue {
+.selection__button--ingredients {
     background: #3282F7;
 }
 
-.selection__button--green {
+.selection__button--devices {
     background: #68D9A4;
+    margin-left: 5%;
 }
 
-.selection__button--orange {
+.selection__button--utensils {
     background-color: #ED6454;
+    margin-left: 5%;
 }
 
 .recipes {
@@ -120,7 +122,7 @@
     border-radius: 0px 0px 5px 5px;
 }
 
-.recipes-article__block2__titre{
+.recipes-article__block2__titre {
     padding: 0% 2%;
     display: flex;
     justify-content: space-between;
@@ -136,11 +138,11 @@
 }
 
 .recipes-article__block2__informations__ingredients {
-   width: 12.5vw;
+    width: 12.5vw;
 }
 
 .recipes-article__block2__informations__description {
-    width: 8vw; 
+    width: 8vw;
     height: 100px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -152,9 +154,166 @@
     font-weight: bold;
 }
 
+.selection__options__button__ingredients {
+    z-index: 2;
+    display: none;
+}
+
+.selection__button__ingredients {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    background-color: #3282F7;
+    width: 33vw;
+    border-radius: 5px 5px 0 0;
+}
+
+.selection__button__ingredients__input {
+    width: 25vw;
+    background-color: #3282F7;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
 
 
-/* ********** Mise en page pour les écrans de 1024px au maximum ********** */
+
+.selection__button__ingredients__input:focus {
+    outline: none;
+}
+
+.selection__button__list__ingredients {
+    display: flex;
+    padding: 1% 2%;
+    width: 33vw;
+    flex-wrap: wrap;
+    list-style-type: none;
+    background-color: #3282F7;
+    color: white;
+    font-weight: bold;
+    height: 30vh;
+    overflow-y: auto;
+    border-radius: 0 0 5px 5px;
+}
+
+
+.ingredients__list {
+    display: flex;
+    margin: 1% 1%;
+    width: 10vw;
+    font-size: 0.7em;
+}
+
+
+.selection__options__button__devices {
+    z-index: 2;
+    position: relative;
+    display: none;
+}
+
+
+.selection__button__devices {
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    background-color: #68D9A4;
+    width: 25vw;
+}
+
+.selection__button__devices__input {
+    width: 25vw;
+    background-color: #68D9A4;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+
+
+.selection__button__devices__input:focus {
+    outline: none;
+}
+
+.selection__button__list__devices {
+    display: flex;
+    padding: 1% 2%;
+    width: 25vw;
+    flex-wrap: wrap;
+    list-style-type: none;
+    background-color: #68D9A4;
+    color: white;
+    font-weight: bold;
+    max-height: 35vh;
+    border-radius: 0 0 5px 5px;
+}
+
+
+.devices__list {
+    display: flex;
+    margin: 1% 1%;
+    width: 10vw;
+    font-size: 0.7em;
+}
+
+.selection__options__button__utensils {
+    z-index: 2;
+    position: relative;
+    display: none;
+}
+
+
+.selection__button__utensils {
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    background-color: #ED6454;
+    width: 25vw;
+}
+
+.selection__button__utensils__input {
+    width: 25vw;
+    background-color: #ED6454;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+
+
+.selection__button__utensils__input:focus {
+    outline: none;
+}
+
+.selection__button__list__utensils {
+    display: flex;
+    padding: 1% 2%;
+    width: 25vw;
+    flex-wrap: wrap;
+    list-style-type: none;
+    background-color: #ED6454;
+    color: white;
+    font-weight: bold;
+    max-height: 35vh;
+    border-radius: 0 0 5px 5px;
+}
+
+
+.utensils__list {
+    display: flex;
+    margin: 1% 1%;
+    width: 10vw;
+    font-size: 0.7em;
+}
+
+/* ********** Mise en page pour les écrans de 1920px au maximum ********** */
 
 @media screen and (max-width: 1920px) {
     .selection {
@@ -162,13 +321,11 @@
     }
 
     .selection__choice {
-        width : 18vw;
+        width: 15vw;
         height: 5vh;
     }
 
     .selection__options {
-        width: 80vw;
-        justify-content: space-between;
         height: 8vh;
     }
 
@@ -177,8 +334,8 @@
     }
 
     .recipes-article {
-       height: 55vh;
-       width: 40vw;
+        height: 55vh;
+        width: 40vw;
     }
 
     .recipes-article__block1 {
@@ -196,4 +353,5 @@
     .recipes-article__block2__informations__description {
         width: 15vw;
     }
+
 }

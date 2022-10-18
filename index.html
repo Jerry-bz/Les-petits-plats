@@ -25,16 +25,42 @@
                 <img src="ASSETS/logo-close.svg" alt="" />
             </div>
             <div class="selection__options">
-                <button class="selection__button selection__button--blue">Ingredients <img src="ASSETS/logo-arrowDown.svg"></button>
-                <button class="selection__button selection__button--green">Appareils <img src="ASSETS/logo-arrowDown.svg"></button>
-                <button class="selection__button selection__button--orange">Ustensils <img src="ASSETS/logo-arrowDown.svg"></button>
+                <button class="selection__button selection__button--ingredients">Ingredients <img
+                        src="ASSETS/logo-arrowDown.svg"></button>
+                <div class="selection__options__button__ingredients">
+                    <div class="selection__button__ingredients">
+                        <input class="selection__button__ingredients__input" type="search"
+                            placeholder="Rechercher un ingrédient" />
+                        <img src="ASSETS/logo-arraowUp.svg">
+                    </div>
+                    <div class="selection__button__list__ingredients"></div>
+                </div>
+                <button class="selection__button selection__button--devices">Appareils <img
+                        src="ASSETS/logo-arrowDown.svg"></button>
+                <div class="selection__options__button__devices">
+                    <div class="selection__button__devices">
+                        <input class="selection__button__devices__input" type="search"
+                            placeholder="Rechercher un appareil" />
+                        <img src="ASSETS/logo-arraowUp.svg">
+                    </div>
+                    <div class="selection__button__list__devices"></div>
+                </div>
+                <button class="selection__button selection__button--utensils">Ustensils <img
+                        src="ASSETS/logo-arrowDown.svg"></button>
+                <div class="selection__options__button__utensils">
+                    <div class="selection__button__utensils">
+                        <input class="selection__button__utensils__input" type="search"
+                            placeholder="Rechercher un ustensile" />
+                        <img src="ASSETS/logo-arraowUp.svg">
+                    </div>
+                    <div class="selection__button__list__utensils"></div>
+                </div>
             </div>
         </div>
-        <div class ="recipes"></div>
+        <div class="recipes"></div>
     </main>
 
-     <script src="SCRIPTS/Pages/index.js" type="module"></script>
-   
+    <script src="SCRIPTS/Pages/index.js" type="module"></script>
 </body>
 
 </html>

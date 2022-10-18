@@ -1,14 +1,17 @@
+
 // Ingredient qui s'affiche sur le DOM
-export function ingredientInnerHtml(ingredient, ingredients, value) {
-    ingredient.innerHTML = `<span class="recipes-article--bold">${ingredients[value].ingredient}</span> <span>${ingredients[value].quantity}</span> <span>${ingredients[value].unit}</span><br>`
-    console.log(ingredient, `ingredient ${value}`);
+export function ingredientRecipe(ingredient, ingredients, value) {
+    ingredient.innerHTML = `<span class="recipes-article--bold">${ingredients[value].ingredient} :</span> <span>${ingredients[value].quantity}</span> <span>${ingredients[value].unit}</span><br>`
+
+    if (ingredients[value].ingredient == ingredients[value].ingredient && ingredients[value].quantity == "") {
+        ingredient.innerHTML = `<span class="recipes-article--bold">${ingredients[value].ingredient}</span>`
+    }
 
     return ingredient
 }
 
-
 // Modification du texte ingredient
-export function textIngredient(element, value) {
+export function textIngredientRecipe(element, value) {
 
     if (element.ingredients[value].ingredient == undefined) {
         element.ingredients[value].ingredient = ''
@@ -20,10 +23,12 @@ export function textIngredient(element, value) {
         element.ingredients[value].unit = 'g'
     } if (element.ingredients[value].unit == 'cuillères à soupe') {
         element.ingredients[value].unit = 'cuillères'
-    } if (element.ingredients[value].ingredient && element.ingredients[value].quantity) {
-        element.ingredients[value].ingredient = element.ingredients[value].ingredient + ":"
     }
+
 }
+
+
+
 
 
 
