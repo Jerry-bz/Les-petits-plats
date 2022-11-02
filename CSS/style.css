@@ -27,11 +27,11 @@
     border: #D04F4F 2px solid;
 }
 
-.header__input {
+.header__input  {
+    color: black;
     width: 100%;
     height: 5vh;
-    font-weight: 400;
-    opacity: 0.25;
+    font-weight: 700;
     border: none;
     background-color: #E7E7E7;
 }
@@ -44,8 +44,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 13vh;
+    height: auto;
     margin-left: 4%;
+}
+
+.selection__tag {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.selection__message {
+    background: pink;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 1%;
+    width: 60%;
+    font-weight: 800;
+    font-size: medium;
+};
+
+.close__message:hover {
+    cursor: pointer;
+}
+
+.selection__tag img:hover {
+    cursor: pointer;
 }
 
 .selection__choice {
@@ -53,7 +77,7 @@
     justify-content: space-around;
     align-items: center;
     height: 3vh;
-    width: 5vw;
+    width: 7vw;
     border-radius: 5px;
     background: #3282F7;
     font-size: 0.7em;
@@ -65,6 +89,7 @@
 .selection__options {
     display: flex;
     position: relative;
+    margin-top: 1%;
     height: 8vh;
 }
 
@@ -80,18 +105,22 @@
     font-weight: bold;
 }
 
+.selection__button:hover {
+    cursor: pointer;
+}
+
 .selection__button--ingredients {
     background: #3282F7;
 }
 
 .selection__button--devices {
     background: #68D9A4;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 .selection__button--utensils {
     background-color: #ED6454;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 .recipes {
@@ -169,6 +198,10 @@
     border-radius: 5px 5px 0 0;
 }
 
+.selection__button__ingredients:hover {
+    cursor: pointer;
+}
+
 .selection__button__ingredients__input {
     width: 25vw;
     background-color: #3282F7;
@@ -177,8 +210,6 @@
     font-weight: bold;
     border: none;
 }
-
-
 
 .selection__button__ingredients__input:focus {
     outline: none;
@@ -193,9 +224,13 @@
     background-color: #3282F7;
     color: white;
     font-weight: bold;
-    height: 30vh;
+    max-height: 35vh;
     overflow-y: auto;
     border-radius: 0 0 5px 5px;
+}
+
+.selection__button__list__ingredients:hover {
+    cursor: pointer;
 }
 
 
@@ -222,6 +257,10 @@
     padding: 1% 2%;
     background-color: #68D9A4;
     width: 25vw;
+}
+
+.selection__button__devices:hover {
+    cursor: pointer;
 }
 
 .selection__button__devices__input {
@@ -252,6 +291,10 @@
     border-radius: 0 0 5px 5px;
 }
 
+.selection__button__list__devices:hover {
+    cursor: pointer;
+}
+
 
 .devices__list {
     display: flex;
@@ -275,6 +318,10 @@
     padding: 1% 2%;
     background-color: #ED6454;
     width: 25vw;
+}
+
+.selection__button__utensils:hover {
+    cursor: pointer;
 }
 
 .selection__button__utensils__input {
@@ -302,7 +349,12 @@
     color: white;
     font-weight: bold;
     max-height: 35vh;
+    overflow-y: auto;
     border-radius: 0 0 5px 5px;
+}
+
+.selection__button__list__utensils:hover {
+    cursor: pointer;
 }
 
 
