@@ -368,8 +368,8 @@
 /* ********** Mise en page pour les écrans de 1920px au maximum ********** */
 
 @media screen and (max-width: 1920px) {
-    .selection {
-        height: 20vh;
+    .header__nav {
+        padding:0.5% 1%;
     }
 
     .selection__choice {
