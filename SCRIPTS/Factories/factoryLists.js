@@ -1,3 +1,12 @@
+function formatText(text) {
+	// Convertie la première lettre en majuscule
+	text = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+
+	// normalize('NFD').replace(/[\u0300-\u036f]/g, '') : nettoyer les accents,
+	return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+}
+
 //  Listes (ingrédients, appareils, Ustensils)
 function listsFactory(recipes) {
 	//  Tableaux (ingredients, appareils, ustensiles)
@@ -8,25 +17,27 @@ function listsFactory(recipes) {
 	for (let recipe of recipes) {
 		const { ingredients, appliance, ustensils } = recipe;
 
-		// On ajoute les appareils et ustensils au tableaux
-		listOfDevices.push(appliance);
-		listOfUtensils.push(ustensils);
+		// On ajoute les appareils 
+		listOfDevices.push(formatText(appliance));
 
-		// On ajoute les ingredients au tableau
+		// On ajoute les ustensiles
+		for (let utensil of ustensils) {
+			listOfUtensils.push(formatText(utensil));
+		}
+
+		// On ajoute les ingredients
 		for (let element of ingredients) {
-			listOfIngredients == listOfIngredients.push(element.ingredient);
+			listOfIngredients.push(formatText(element.ingredient));
 		}
 	}
 
-	// Aplatir le tableau multidimensionnel des ustensils
-	listOfUtensils = listOfUtensils.flat();
 
-	// Dédoublonner les tableaux
-	let listIngredients = [...new Set(listOfIngredients)];
-	let listDevices = [...new Set(listOfDevices)];
-	let listUtensils = [...new Set(listOfUtensils)];
+	// Dédoublonner et trier par ordre alphabétique les tableaux
+	let listIngredients = [...new Set(listOfIngredients)].sort();
+	let listDevices = [...new Set(listOfDevices)].sort();
+	let listUtensils = [...new Set(listOfUtensils)].sort();
 
 	return { listIngredients, listDevices, listUtensils };
 }
 
-export default listsFactory;
+export { formatText, listsFactory };

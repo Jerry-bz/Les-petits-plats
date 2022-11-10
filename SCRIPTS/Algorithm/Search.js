@@ -1,4 +1,4 @@
-import listsFactory from '../Factories/factoryLists.js';
+import {formatText,listsFactory} from '../Factories/factoryLists.js';
 import { displayListIngredients, displayListDevices, displayListUtensils } from '../Utils/displayLists.js';
 import recipeFactory from '../Factories/factoryRecipe.js';
 import searchButtonClick from '../Utils/displayTag.js';
@@ -18,11 +18,11 @@ const searchNavInputRecipe = (inputTextValue, allRecipes) => {
 		arrayResultSearch = [];
 
 		allRecipes.forEach((recipe) => {
-			if (recipe.name.toLowerCase().includes(inputTextValue.toLowerCase()) || recipe.description.toLowerCase().includes(inputTextValue.toLowerCase())) {
+			if (formatText(recipe.name).toLowerCase().includes(inputTextValue.toLowerCase()) || formatText(recipe.description).toLowerCase().includes(inputTextValue.toLowerCase())) {
 				arrayResultSearch.push(recipe);
 			} else {
 				recipe.ingredients.forEach((element) => {
-					if (element.ingredient.toLowerCase().includes(inputTextValue.toLowerCase())) {
+					if (formatText(element.ingredient).toLowerCase().includes(inputTextValue.toLowerCase())) {
 						// Retourne le resultat de la saisie 
 						arrayResultSearch.push(recipe);
 					}
