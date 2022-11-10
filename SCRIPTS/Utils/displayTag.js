@@ -43,11 +43,21 @@ const searchButtonClick = () => {
 	const displayButtonUtensils = document.querySelector('.selection__button--utensils');
 	const closeListUtensils = document.querySelector('.selection__options__button__utensils');
 
+	const listTags = document.querySelectorAll('.selection__choice');
 
+	let tagsArray = [];
+	for (let element of listTags) {
+		tagsArray.push(element.textContent.toLowerCase());
+	}
+	
 
 	for (let ingredient of sectionListIngredients) {
 		ingredient.addEventListener('click', () => {
-			tagDom(ingredient.textContent, '#3282F7');
+			if (!tagsArray.includes(ingredient.textContent.toLowerCase())) {
+				console.log(tagsArray);
+				console.log(ingredient.textContent);
+				tagDom(ingredient.textContent, '#3282F7');
+			}
 			filterTag(recipes);
 			closeListIngredients.style.display = 'none';
 			displayButtonIngredients.style.display = 'flex';
@@ -56,7 +66,9 @@ const searchButtonClick = () => {
 
 	for (let device of sectionListDevices) {
 		device.addEventListener('click', () => {
-			tagDom(device.textContent, '#68D9A4');
+			if (!tagsArray.includes(device.textContent.toLowerCase())) {
+				tagDom(device.textContent, '#68D9A4');
+			}
 			filterTag(recipes);
 			closeListDevices.style.display ='none';
 			displayButtonDevices.style.display ='flex';
@@ -65,7 +77,9 @@ const searchButtonClick = () => {
 
 	for (let utensil of sectionListUtensils) {
 		utensil.addEventListener('click', () => {
-			tagDom(utensil.textContent, '#ED6454');
+			if (!tagsArray.includes(utensil.textContent.toLowerCase())) {
+				tagDom(utensil.textContent, '#ED6454');
+			}
 			filterTag(recipes);
 			closeListUtensils.style.display = 'none';
 			displayButtonUtensils.style.display = 'flex';
