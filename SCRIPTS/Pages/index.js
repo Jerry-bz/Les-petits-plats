@@ -3,7 +3,7 @@ import displayRecipes from '../Utils/displayRecipes.js';
 import { displayListIngredients, displayListDevices, displayListUtensils } from '../Utils/displayLists.js';
 import { searchNavInputRecipe, searchButtonsInput } from '../Algorithm/Search.js';
 import recipeFactory from '../Factories/factoryRecipe.js';
-import listsFactory from '../Factories/factoryLists.js';
+import { listsFactory } from '../Factories/factoryLists.js';
 import searchButtonClick from '../Utils/displayTag.js';
 
 
@@ -32,7 +32,7 @@ function searchInputMain() {
 
 	// Event input 
 	inputText.addEventListener('input', (e) => {
-    
+
 		const sectionRecipes = document.querySelector('.recipes');
 
 		// Recupere les recettes qui correspond a la saisie
@@ -60,7 +60,7 @@ function searchInputMain() {
 		}
 
 		searchButtonClick();
-    
+
 	});
 
 }

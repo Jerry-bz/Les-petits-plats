@@ -1,4 +1,4 @@
-import listsFactory from '../Factories/factoryLists.js';
+import { formatText, listsFactory } from '../Factories/factoryLists.js';
 import { displayListIngredients, displayListDevices, displayListUtensils } from '../Utils/displayLists.js';
 import recipeFactory from '../Factories/factoryRecipe.js';
 import searchButtonClick from '../Utils/displayTag.js';
@@ -17,15 +17,15 @@ const searchNavInputRecipe = (inputTextValue, allRecipes) => {
 		for (let recipe of allRecipes) {
 			// Tableau qui récupère la saise du nom et de la decription en lien avec les données
 			if (
-				recipe.name.toLowerCase().includes(inputTextValue.toLowerCase()) ||
-        recipe.description.toLowerCase().includes(inputTextValue.toLowerCase())
+				formatText(recipe.name).toLowerCase().includes(inputTextValue.toLowerCase()) ||
+				formatText(recipe.description).toLowerCase().includes(inputTextValue.toLowerCase())
 			) {
 				arrayResultSearch.push(recipe);
 			} else {
 				// Tableau qui récupère la saise des ingrédients en lien avec les données
 				for (let element of recipe.ingredients) {
 					if (
-						element.ingredient
+						formatText(element.ingredient)
 							.toLowerCase()
 							.includes(inputTextValue.toLowerCase())
 					) {
@@ -88,7 +88,7 @@ const filterTag = (recipes) => {
 				listbydevice = recipes;
 			} else {
 				listTagDevices.includes(recipe.appliance.toLowerCase()) &&
-          listbydevice.push(recipe);
+					listbydevice.push(recipe);
 			}
 
 			/*   filtre par ustensile   */
@@ -106,8 +106,8 @@ const filterTag = (recipes) => {
 	for (let recipe of recipes) {
 		if (
 			listbydevice.includes(recipe) &&
-      listbyustensil.includes(recipe) &&
-      listbyingredient.includes(recipe)
+			listbyustensil.includes(recipe) &&
+			listbyingredient.includes(recipe)
 		) {
 			result.push(recipe);
 		}
@@ -115,7 +115,7 @@ const filterTag = (recipes) => {
 
 	if (result.length === 0) {
 		result = recipes;
-	}
+	} 
 
 	const lists = listsFactory(result);
 

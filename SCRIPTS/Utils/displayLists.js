@@ -10,6 +10,15 @@ function displayListIngredients(listOfIngredients) {
 		listIngredients.append(ingredient);
 	}
 
+	const allIngredients = document.querySelectorAll('.ingredients__list');
+	
+	for (let ingredient of allIngredients) {
+		if (ingredient.textContent === '') {
+			ingredient.style.display = 'none';
+		} 
+	}
+
+
 	const buttonIngredients = document.querySelector(
 		'.selection__button--ingredients'
 	);
