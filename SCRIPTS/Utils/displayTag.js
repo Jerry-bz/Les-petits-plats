@@ -54,8 +54,6 @@ const searchButtonClick = () => {
 	for (let ingredient of sectionListIngredients) {
 		ingredient.addEventListener('click', () => {
 			if (!tagsArray.includes(ingredient.textContent.toLowerCase())) {
-				console.log(tagsArray);
-				console.log(ingredient.textContent);
 				tagDom(ingredient.textContent, '#3282F7');
 			}
 			filterTag(recipes);
