@@ -77,7 +77,7 @@ const filterTag = (recipes) => {
 			exist === listTagIngredient.length && listbyingredient.push(recipe);
 
 			/*   filtre par device   */
-			listTagDevices.length === 0 ? listbydevice = recipes : listbydevice = recipes;
+			listTagDevices.length === 0 ? listbydevice = recipes : listTagDevices.push(recipe);
 
 			/*   filtre par ustensile   */
 			let existUst = 0;
