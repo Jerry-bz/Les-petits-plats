@@ -113,9 +113,12 @@ const filterTag = (recipes) => {
 		}
 	}
 
+	// Si tableau vide on affiche toutes les recettes
 	if (result.length === 0) {
+		const tags = document.querySelector('.selection__tag');
+		tags.innerHTML='';
 		result = recipes;
-	} 
+	}
 
 	const lists = listsFactory(result);
 
